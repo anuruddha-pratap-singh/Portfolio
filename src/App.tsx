@@ -11,9 +11,10 @@ import { SkillsSection } from './sections/SkillsSection'
 
 function getSavedTheme(): Theme {
   try {
-    return window.localStorage.getItem('portfolio-theme') === 'dark' ? 'dark' : 'light'
+    const savedTheme = window.localStorage.getItem('portfolio-theme-v2')
+    return savedTheme === 'light' ? 'light' : 'dark'
   } catch {
-    return 'light'
+    return 'dark'
   }
 }
 
@@ -28,7 +29,7 @@ function App() {
     const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')
     if (themeColor) themeColor.content = theme === 'dark' ? '#111111' : '#f2f1ed'
     try {
-      window.localStorage.setItem('portfolio-theme', theme)
+      window.localStorage.setItem('portfolio-theme-v2', theme)
     } catch {
       // Theme still works for this visit when storage is unavailable.
     }

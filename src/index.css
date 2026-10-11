@@ -1,33 +1,14 @@
 :root {
   font-family: 'Manrope', sans-serif;
-  color: #191917;
-  background: #f2f1ed;
+  color-scheme: dark;
+  color: #f1f0ec;
+  background: #171716;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
   font-weight: 400;
-  --paper: #f2f1ed;
-  --surface: #faf9f6;
-  --surface-raised: #e8e7e2;
-  --ink: #191917;
-  --muted: #73736e;
-  --line: rgba(25, 25, 23, 0.16);
-  --line-strong: rgba(25, 25, 23, 0.34);
-  --inverse: #131312;
-  --inverse-surface: #1b1b19;
-  --inverse-ink: #f2f1ed;
-  --inverse-muted: #aaa9a3;
-  --inverse-line: rgba(242, 241, 237, 0.18);
-  --mono: 'DM Mono', monospace;
-  --page: min(1440px, calc(100% - clamp(2.5rem, 11vw, 10rem)));
-  --ease: cubic-bezier(0.2, 0.72, 0.2, 1);
-}
-
-:root[data-theme='dark'] {
-  color: #f1f0ec;
-  background: #171716;
   --paper: #171716;
   --surface: #1e1e1c;
   --surface-raised: #252523;
@@ -40,6 +21,27 @@
   --inverse-ink: #f1f0ec;
   --inverse-muted: #aaa9a3;
   --inverse-line: rgba(241, 240, 236, 0.2);
+  --mono: 'DM Mono', monospace;
+  --page: min(1440px, calc(100% - clamp(2.5rem, 11vw, 10rem)));
+  --ease: cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  color: #191917;
+  background: #f2f1ed;
+  --paper: #f2f1ed;
+  --surface: #faf9f6;
+  --surface-raised: #e8e7e2;
+  --ink: #191917;
+  --muted: #73736e;
+  --line: rgba(25, 25, 23, 0.16);
+  --line-strong: rgba(25, 25, 23, 0.34);
+  --inverse: #131312;
+  --inverse-surface: #1b1b19;
+  --inverse-ink: #f2f1ed;
+  --inverse-muted: #aaa9a3;
+  --inverse-line: rgba(242, 241, 237, 0.18);
 }
 
 * { box-sizing: border-box; }

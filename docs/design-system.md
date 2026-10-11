@@ -6,8 +6,8 @@ The portfolio uses a restrained black, white, and gray palette with a warm paper
 
 - **Display and body:** Manrope, loaded from Google Fonts; local fallbacks use system sans-serif.
 - **Metadata:** DM Mono for section numbers, project details, and labels.
-- **Default theme:** light paper background with dark ink; the hero, approach, contact, and footer use dark surfaces for contrast.
-- **Alternate theme:** persisted dark theme using the same neutral palette.
+- **Default theme:** dark charcoal background with warm light ink; selected project artwork and image surfaces add contrast.
+- **Alternate theme:** persisted light paper theme using the same neutral palette.
 - **Spacing:** section padding scales with viewport size; shared side margins use a fluid page-width token.
 - **Motion:** short transitions on controls only; all motion is reduced when `prefers-reduced-motion` is enabled.
 - **Components:** sticky navigation, text and primary buttons, project cards, filter controls, grouped skill lists, form fields, and status messages.
