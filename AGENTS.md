@@ -8,6 +8,7 @@
 
 ## Git commits and pushes
 
+- Write every commit message strictly in lowercase letters, including its type and summary (for example, `feat: add project cards`).
 - For each coherent implementation milestone completed in response to the user's request, review the diff, stage only files and changes made for that milestone, create a concise commit, and push it to the current branch's configured upstream (normally `origin`) without asking again.
 - Do not create empty commits. If the task makes no file changes, do not commit or push.
 - Never force-push, rewrite published history, merge pull requests, or deploy the site unless the user separately asks.
