@@ -34,19 +34,13 @@ export function HeroSection() {
         </div>
 
         <figure className="hero__visual" data-reveal>
-          <div className="hero__visual-topline"><span><i className="status-led" />PROFILE INSTANCE</span><span>APS / 01</span></div>
-          <div className="hero__image-frame">
-            <img
-              className="hero__image"
-              src="/images/anuruddha-hero-board.webp"
-              alt="Portrait of Anuruddha wearing a black shirt with his arms crossed."
-              fetchPriority="high"
-              decoding="async"
-            />
-            <div className="hero__image-scan" aria-hidden="true" />
-          </div>
-          <figcaption className="hero__image-caption"><span>ANURUDDHA PRATAP SINGH KUSHWAH</span><span>COMPUTER SCIENCE / AI</span></figcaption>
-          <span className="hero__visual-index" aria-hidden="true">PERSONAL PROFILE / 2026</span>
+          <img
+            className="hero__image"
+            src="/images/anuruddha-hero-cutout.webp"
+            alt="Anuruddha wearing a black shirt with his arms crossed."
+            fetchPriority="high"
+            decoding="async"
+          />
         </figure>
         <a className="hero__scroll" href="#about" aria-label="Scroll to about section">
           <span className="hero__scroll-line" aria-hidden="true" /><span>SCROLL TO EXPLORE</span><ArrowDownRight size={15} aria-hidden="true" />
