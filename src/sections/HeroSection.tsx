@@ -36,7 +36,7 @@ export function HeroSection() {
         <figure className="hero__visual" data-reveal>
           <img
             className="hero__image"
-            src="/images/anuruddha-hero-cutout.webp"
+            src="/images/anuruddha-hero-cutout.png"
             alt="Anuruddha wearing a black shirt with his arms crossed."
             fetchPriority="high"
             decoding="async"
