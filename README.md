@@ -1,6 +1,6 @@
 # Anuruddha — Personal portfolio
 
-A responsive, monochrome portfolio for Anuruddha Pratap Singh Kushwah. It presents verified public work and learning areas, uses his supplied portraits, and stores contact inquiries in Supabase.
+A responsive, circuit-inspired portfolio for Anuruddha Pratap Singh Kushwah. It presents verified public work and learning areas, uses edited versions of his supplied portraits, and stores contact inquiries in Supabase.
 
 ## Features
 

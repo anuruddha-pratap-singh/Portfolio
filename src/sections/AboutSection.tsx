@@ -7,40 +7,41 @@ export function AboutSection() {
     <section className="section about-section" id="about" aria-labelledby="about-title">
       <div className="page-width">
         <SectionHeading
+          id="about-title"
           index="01"
-          label="A little about me"
-          title="Learning the craft, one build at a time."
-          intro="I’m drawn to the space between solid engineering and interfaces that feel clear to use."
+          label="System profile"
+          title="Build to understand the system."
+          intro="My path into software is hands-on: make an idea concrete, learn from the edges, and improve the next version."
         />
-        <div className="about-grid">
+        <div className="about-grid" data-reveal>
+          <figure className="about-photo">
+            <img
+              src="/images/anuruddha-hoodie-board.webp"
+              alt="Anuruddha wearing a gray hoodie against a dark circuit-inspired studio background."
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption><span>IDENTITY / ANURUDDHA</span><span>PROFILE IMAGE / 02</span></figcaption>
+            <span className="about-photo__corner" aria-hidden="true">APS</span>
+          </figure>
           <div className="about-copy">
             <p className="about-copy__lead">
-              Most of my progress comes from doing the work: understanding an idea, building a small version, and returning to it until it makes sense.
+              I’m interested in the full path from a clear interface to the data and logic that make it work.
             </p>
             <p>
-              My public repositories reflect that process — Java problem solving alongside frontend and full-stack coursework. I enjoy exploring how each part of an application fits together, from the first interaction to the data behind it.
+              My public repositories document that practice: Java problem solving alongside frontend and full-stack coursework. I like tracing how each part of an application fits together, from a small interaction to the structure behind it.
             </p>
             <p>
               I’m studying Computer Science (AI) and building a strong foundation in web development, data structures, and software design.
             </p>
             <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">
-              Find me on LinkedIn <ArrowUpRight size={16} aria-hidden="true" />
+              Connect on LinkedIn <ArrowUpRight size={16} aria-hidden="true" />
             </a>
-          </div>
-          <figure className="about-photo">
-            <img
-              src="/images/anuruddha-hoodie.png"
-              alt="Anuruddha wearing glasses and a gray hoodie."
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption><span>PERSONAL PORTRAIT</span><span>02 / 02</span></figcaption>
-          </figure>
-          <div className="about-aside">
-            <span className="about-aside__line" aria-hidden="true" />
-            <p className="eyebrow"><span>Based on</span> verified profile details</p>
-            <p className="about-aside__degree">Computer Science<br /><span>B.Tech CSE (AI)</span></p>
-            <p className="about-aside__caption">A learner first, with a focus on practical software and the fundamentals underneath it.</p>
+            <dl className="profile-specs">
+              <div><dt>Study</dt><dd>B.Tech CSE · AI</dd></div>
+              <div><dt>Practice</dt><dd>Java · React · Node.js</dd></div>
+              <div><dt>Approach</dt><dd>Build · inspect · refine</dd></div>
+            </dl>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 type SectionHeadingProps = {
+  id: string
   index: string
   label: string
   title: string
@@ -6,11 +7,11 @@ type SectionHeadingProps = {
   inverse?: boolean
 }
 
-export function SectionHeading({ index, label, title, intro, inverse = false }: SectionHeadingProps) {
+export function SectionHeading({ id, index, label, title, intro, inverse = false }: SectionHeadingProps) {
   return (
-    <div className={`section-heading${inverse ? ' section-heading--inverse' : ''}`}>
+    <div className={`section-heading${inverse ? ' section-heading--inverse' : ''}`} data-reveal>
       <p className="eyebrow"><span>{index}</span>{label}</p>
-      <h2>{title}</h2>
+      <h2 id={id}>{title}</h2>
       {intro && <p className="section-heading__intro">{intro}</p>}
     </div>
   )

@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
     document.documentElement.dataset.theme = theme
     const themeColor = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')
-    if (themeColor) themeColor.content = theme === 'dark' ? '#111111' : '#f2f1ed'
+    if (themeColor) themeColor.content = theme === 'dark' ? '#080c0a' : '#edf2eb'
     try {
       window.localStorage.setItem('portfolio-theme-v2', theme)
     } catch {
@@ -45,6 +45,41 @@ function App() {
     }, { rootMargin: '-35% 0px -55% 0px', threshold: [0, 0.1, 0.35, 0.65] })
     sections.forEach((section) => observer.observe(section))
     return () => observer.disconnect()
+  }, [])
+
+  useEffect(() => {
+    const revealItems = Array.from(document.querySelectorAll<HTMLElement>('[data-reveal]'))
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+      revealItems.forEach((item) => item.classList.add('is-visible'))
+      return
+    }
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible')
+          revealObserver.unobserve(entry.target)
+        }
+      })
+    }, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' })
+
+    const observeRevealItems = (root: ParentNode) => {
+      if (root instanceof HTMLElement && root.matches('[data-reveal]')) revealObserver.observe(root)
+      root.querySelectorAll<HTMLElement>('[data-reveal]').forEach((item) => revealObserver.observe(item))
+    }
+    observeRevealItems(document)
+
+    const mutationObserver = new MutationObserver((records) => {
+      records.forEach((record) => record.addedNodes.forEach((node) => {
+        if (node instanceof HTMLElement) observeRevealItems(node)
+      }))
+    })
+    mutationObserver.observe(document.getElementById('main-content') ?? document.body, { childList: true, subtree: true })
+
+    return () => {
+      revealObserver.disconnect()
+      mutationObserver.disconnect()
+    }
   }, [])
 
   useEffect(() => {

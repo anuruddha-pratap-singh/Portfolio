@@ -22,13 +22,14 @@ export function ProjectsSection() {
     <section className="section projects-section" id="projects" aria-labelledby="projects-title">
       <div className="page-width">
         <SectionHeading
+          id="projects-title"
           index="02"
           label="Selected repositories"
-          title="Work in progress. Work in public."
-          intro="A small selection from my GitHub, chosen for the ideas and engineering fundamentals behind each repository."
+          title="Small systems. Real learning."
+          intro="Two working threads from my public GitHub: algorithm practice and web engineering fundamentals."
         />
-        <div className="project-toolbar">
-          <p><span className="project-count">{String(visibleProjects.length).padStart(2, '0')}</span> repositories</p>
+        <div className="project-toolbar" data-reveal>
+          <p><span className="project-count">{String(visibleProjects.length).padStart(2, '0')}</span> REPOSITORIES IN VIEW</p>
           <div className="filter-list" role="group" aria-label="Filter projects">
             {filters.map((item) => (
               <button
@@ -46,7 +47,7 @@ export function ProjectsSection() {
         <div className="projects-grid" aria-live="polite">
           {visibleProjects.map((project) => <ProjectCard key={project.number} project={project} />)}
         </div>
-        <p className="projects-note">Descriptions and technologies are based on repository READMEs and contents. No demo links are shown when a live demo is not available.</p>
+        <p className="projects-note" data-reveal>Descriptions and technologies are based on repository READMEs and contents. No demo links are shown where a live demo has not been verified.</p>
       </div>
     </section>
   )

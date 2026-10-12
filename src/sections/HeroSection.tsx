@@ -1,49 +1,55 @@
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react'
-import { profile } from '../data/portfolio'
 
 export function HeroSection() {
   return (
     <section className="hero" id="home" aria-labelledby="hero-title">
+      <svg className="hero-circuit" viewBox="0 0 1400 720" preserveAspectRatio="none" aria-hidden="true">
+        <path className="hero-circuit__trace hero-circuit__trace--one" d="M-30 500h220l80-80h150l75-75h150l90-90h190" />
+        <path className="hero-circuit__trace hero-circuit__trace--two" d="M760 -30v110l-65 65v145l-82 82v150l-88 88v150" />
+        <path className="hero-circuit__trace hero-circuit__trace--three" d="M1430 330h-150l-72 72h-132l-90 90h-102" />
+        <circle className="hero-circuit__node hero-circuit__node--one" cx="190" cy="500" r="4" />
+        <circle className="hero-circuit__node hero-circuit__node--two" cx="835" cy="390" r="4" />
+        <circle className="hero-circuit__node hero-circuit__node--three" cx="1150" cy="492" r="4" />
+      </svg>
       <div className="hero__inner page-width">
-        <div className="hero__copy">
-          <p className="eyebrow eyebrow--light"><span>01</span> Developer in practice</p>
-          <h1 id="hero-title">Curious mind.<br /><span>Considered code.</span></h1>
+        <div className="hero__copy" data-reveal>
+          <p className="eyebrow eyebrow--light"><span className="status-led" aria-hidden="true" />ENGINEER PROFILE <span className="eyebrow__divider">/</span> 01</p>
+          <h1 id="hero-title">Systems thinker.<br /><span>Software builder.</span></h1>
           <p className="hero__intro">
-            I’m Anuruddha — a computer science student learning through problem solving, full-stack practice, and useful projects.
+            I’m Anuruddha, a computer science student exploring how thoughtful software connects interfaces, algorithms, and the systems underneath.
           </p>
           <div className="hero__meta">
-            <span className="availability-mark" aria-hidden="true" />
-            <span>B.Tech CSE (AI)</span>
-            <span className="hero__meta-divider" aria-hidden="true">/</span>
-            <span>Learning through building</span>
+            <span className="hero__tag">B.Tech CSE <i>·</i> AI</span>
+            <span className="hero__tag">Learning in public</span>
           </div>
           <div className="hero__actions">
-            <a className="button button--light" href="#projects">
+            <a className="button button--accent" href="#projects">
               Explore selected work <ArrowDownRight size={17} strokeWidth={1.8} aria-hidden="true" />
             </a>
-            <a className="hero__text-link" href={profile.github} target="_blank" rel="noreferrer">
-              GitHub profile <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" />
+            <a className="button button--outline" href="#contact">
+              Start a conversation <ArrowUpRight size={16} strokeWidth={1.8} aria-hidden="true" />
             </a>
           </div>
-          <p className="hero__index">Personal portfolio / Selected work</p>
+          <div className="hero__footline"><span>FOCUS</span><span>WEB SYSTEMS · DSA · SOFTWARE DESIGN</span></div>
         </div>
 
-        <div className="hero__visual">
+        <figure className="hero__visual" data-reveal>
+          <div className="hero__visual-topline"><span><i className="status-led" />PROFILE INSTANCE</span><span>APS / 01</span></div>
           <div className="hero__image-frame">
             <img
               className="hero__image"
-              src="/images/anuruddha-portrait.png"
+              src="/images/anuruddha-hero-board.webp"
               alt="Portrait of Anuruddha wearing a black shirt with his arms crossed."
               fetchPriority="high"
               decoding="async"
             />
-            <div className="hero__image-caption"><span>ANURUDDHA PRATAP SINGH KUSHWAH</span><span>01 / 02</span></div>
+            <div className="hero__image-scan" aria-hidden="true" />
           </div>
-          <div className="hero__vertical-note" aria-hidden="true">LEARN TECH BY BUILDING IT</div>
-          <div className="hero__visual-index" aria-hidden="true">A—01</div>
-        </div>
+          <figcaption className="hero__image-caption"><span>ANURUDDHA PRATAP SINGH KUSHWAH</span><span>COMPUTER SCIENCE / AI</span></figcaption>
+          <span className="hero__visual-index" aria-hidden="true">PERSONAL PROFILE / 2026</span>
+        </figure>
         <a className="hero__scroll" href="#about" aria-label="Scroll to about section">
-          <span>Scroll to explore</span><ArrowDownRight size={15} aria-hidden="true" />
+          <span className="hero__scroll-line" aria-hidden="true" /><span>SCROLL TO EXPLORE</span><ArrowDownRight size={15} aria-hidden="true" />
         </a>
       </div>
     </section>

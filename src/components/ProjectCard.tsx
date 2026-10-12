@@ -9,35 +9,47 @@ function ProjectArtwork({ project }: ProjectCardProps) {
   if (project.visual === 'algorithms') {
     return (
       <div className="project-artwork project-artwork--algorithms" aria-hidden="true">
-        <div className="artwork-topline"><span>JAVA / DSA</span><span>01—03</span></div>
+        <div className="artwork-topline"><span>PROCESS MAP / ILLUSTRATIVE</span><span>01—03</span></div>
+        <svg className="artwork-circuit" viewBox="0 0 500 180" preserveAspectRatio="none">
+          <path d="M0 105h110l28-28h90l22 22h90l25-25h135" />
+          <path d="M145 77V35h88l18 18h68" />
+          <path d="M295 99v48h75l20-20h110" />
+          <circle cx="110" cy="105" r="4" /><circle cx="256" cy="53" r="4" /><circle cx="390" cy="127" r="4" />
+        </svg>
         <div className="algorithm-list">
-          <span><i>01</i> two sum <b>O(n)</b></span>
-          <span><i>02</i> valid parentheses <b>stack</b></span>
-          <span><i>03</i> climbing stairs <b>dp</b></span>
+          <span><i>01</i> understand the input <b>read</b></span>
+          <span><i>02</i> choose a structure <b>model</b></span>
+          <span><i>03</i> test the idea <b>refine</b></span>
         </div>
-        <div className="artwork-coordinate">PROBLEM SOLVING / IN PROGRESS</div>
+        <div className="artwork-coordinate">JAVA · DATA STRUCTURES · ALGORITHMS</div>
       </div>
     )
   }
 
   return (
     <div className="project-artwork project-artwork--web" aria-hidden="true">
-      <div className="artwork-topline"><span>WEBDEV / SEM 03</span><span>REACT + MERN</span></div>
+      <div className="artwork-topline"><span>CONCEPT MAP / ILLUSTRATIVE</span><span>02—03</span></div>
+      <svg className="artwork-circuit" viewBox="0 0 500 180" preserveAspectRatio="none">
+        <path d="M0 88h88l25 24h73l20-20h96l30-30h168" />
+        <path d="M112 112v36h70l24-24h95" />
+        <path d="M302 62V27h94l24 24h79" />
+        <circle cx="88" cy="88" r="4" /><circle cx="302" cy="62" r="4" /><circle cx="301" cy="124" r="4" />
+      </svg>
       <div className="web-map">
-        <span className="web-map__node web-map__node--react">react</span>
+        <span className="web-map__node">UI<br /><b>React</b></span>
         <span className="web-map__line" />
-        <span className="web-map__node">api</span>
+        <span className="web-map__node web-map__node--react">APP<br /><b>Node.js</b></span>
         <span className="web-map__line" />
-        <span className="web-map__node web-map__node--data">data</span>
+        <span className="web-map__node web-map__node--data">DATA<br /><b>MongoDB</b></span>
       </div>
-      <div className="artwork-coordinate">FUNDAMENTALS / PRACTICE / PROJECTS</div>
+      <div className="artwork-coordinate">INTERFACE → LOGIC → PERSISTENCE</div>
     </div>
   )
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="project-card">
+    <article className="project-card" data-reveal>
       <ProjectArtwork project={project} />
       <div className="project-card__body">
         <div className="project-card__meta">
