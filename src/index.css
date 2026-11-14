@@ -478,3 +478,13 @@ img { display: block; max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Scroll-controlled canvas story */
+html { scroll-behavior: auto; }
+body { background: #080c0a; }
+.canvas-story__source { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.canvas-story__stage { position: relative; height: 700vh; background: #080c0a; }
+.canvas-story__canvas { position: sticky; top: 0; display: block; width: 100%; height: 100svh; }
+.canvas-story__accessible { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 760px) { .canvas-story__stage { height: 650vh; } }
+@media (prefers-reduced-motion: reduce) { .canvas-story__stage { height: auto; min-height: 100svh; } .canvas-story__canvas { position: relative; } }
